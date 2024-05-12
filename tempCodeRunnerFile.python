@@ -1,0 +1,8 @@
+from pytube import Playlist
+p = Playlist('https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ')
+t=0
+for video in p.videos:
+    if t==0:
+        t=1
+        continue
+    video.streams.first().download()
